@@ -1,12 +1,98 @@
+body{
+    font-size: 30px;
+}
 
-/* 
+.elInput{
+border: none;
+outline: none;
+}
 
-    You can write your own styles here...
+.toDos{
+    display: flex;
+    justify-content: space-around;
+    color: #36353557;
+    font-size: 100px;
     
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+}
 
-*/
+
+.container{
+    background: white;
+}
+
+.does{
+    padding-inline-start: 60px;
+    padding-top: 1%;
+
+}
+
+.contenedorDo{
+    color:#616461e8;
+}
+
+.contenedorDo:hover .deleteBoton{
+    display: block;
+}
+
+input{
+    width: 100%;
+    height: 60px;
+    margin-left: 0px !important;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-inline-start: 60px;
+    
+}
+
+.contenedor {
+    width: 70%;
+    margin: 0 auto;
+    box-shadow: 10px 3px 50px #808080;
+}
+  
+.deleteBoton {
+    display: none;
+    border: none;
+    background-color: white;
+    color:#36353557;
+    padding-top: 5px;
+}
+
+.deleteBoton:hover{
+    color: #d4111157;
+}
+
+
+p{
+    background: white;
+}
+
+.footer{
+    font-size: 20px;
+    padding: 10px;
+    color: #36353557;
+    position: relative;
+    z-index: 1;
+}
+
+.footer1{
+    font-size: 20px;
+    padding: 10px;
+    color: #36353557;
+    margin: 0 auto;
+    width: 68%;
+    margin-top: -50px;
+    z-index: 1;
+}
+
+
+.footer2{
+    font-size: 20px;
+    padding: 10px;
+    color: #36353557;
+    margin: 0 auto;
+    width: 69%;
+    margin-top: -60px;
+    z-index: 2;
+}
+
