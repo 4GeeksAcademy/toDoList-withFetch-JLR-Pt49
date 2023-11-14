@@ -80,11 +80,26 @@ function deleteElementById(index) {
 		  <div className="contenedor">
 		  <div className="input-group mb-3">
 			<label></label>
-			<input className="elInput" placeholder="What needs to be done?" onKeyDown={(e) => (e.keyCode === 13 ? cambiarElement(e) : null)} value={input} type="text" onChange={cambioDeImput} />
+			
+			<input 
+ 		 	className="elInput" 
+  			placeholder="What needs to be done?" 
+  			onKeyDown={(e) => { 
+    			if (e.keyCode === 13) {
+     				cambiarElement(e);
+      				addToDoArray(e);
+   	 		}
+  			}} 
+  			value={input} 
+  			type="text" 
+  			onChange={(e) => {
+    				cambioDeImput(e);
+    				addToDoArray(e);
+ 			 }}/>
 		  </div>
-		  {elements.map( (element, index ) => 
+		  {datos.map( (item, index ) => 
 		  <div className="position-relative contenedorDo">
-		  <p className="does ms-0 border-top" id={index} key={index}> {element}</p> <button className="position-absolute top-50 end-0 translate-middle-y me-2 deleteBoton" onClick={() => deleteElementById(index)}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+		  <p className="does ms-0 border-top" id={item.id} key={item.id}> {item.label} </p> <button className="position-absolute top-50 end-0 translate-middle-y me-2 deleteBoton" onClick={() => deleteElementById(index)}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
   		  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
 		  </svg></button>
 		  </div>)}
@@ -92,7 +107,7 @@ function deleteElementById(index) {
 		  </div>
 		  <p className="border footer1">{elements.length} items left</p>
 		  <p className="border footer2">{elements.length} items left</p>
-		  <button onClick={addToDoArray}>Boton para mandar al Api</button>
+		  
 
 	  </>
   );
