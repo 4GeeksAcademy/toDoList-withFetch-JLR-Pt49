@@ -96,3 +96,20 @@ p{
     z-index: 2;
 }
 
+.deleteBoton2{
+    border: none;
+    color: #36353557;
+    background: none;
+};
+
+.deleteBoton2:hover{
+    color:red;
+
+}
+
+.createBoton{
+    border: none;
+    color: #36353557;
+    background: none;
+    
+};
