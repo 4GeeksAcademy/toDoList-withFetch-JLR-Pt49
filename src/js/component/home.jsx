@@ -134,8 +134,7 @@ function deleteAllExceptFirst() {
 	}
 }
 
-function createUser(){
-    useEffect(() => {
+ function createUser(){
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -143,9 +142,10 @@ function createUser(){
         };
         fetch('https://playground.4geeks.com/apis/fake/todos/user/joseRegueiro', requestOptions)
             .then(response => response.json())
-            .then(data => setPostId(data.id));
-    }, []);
-}
+            .then(data => console.log(data));
+    }
+
+
 
 
 
@@ -156,7 +156,7 @@ function createUser(){
 	  	{/* { datos.map( (item)=> <p key={item.id}>{item.label}</p> ) } */}
 	  	  <h1 className="display-1 toDos mb-5 ">ToDos</h1>
           <div className="container position-relative">
-          <button onClick={createUser} className="createBoton mt-5 mb-3 position-absolute bottom-0 start-50 translate-middle-x">Crear nuevo usuario</button>	
+          <button title="Te cree este botón para que no tuvieras que usar Postman, abrazo" onClick={createUser} className="createBoton mt-5 mb-3 position-absolute bottom-0 start-50 translate-middle-x">Crear usuario</button>	
           </div>
 		  <div className="contenedor">
 		  <div className="input-group mb-3">
@@ -197,7 +197,7 @@ function createUser(){
 		  <p className="border footer1">{elements.length} items left</p>
 		  <p className="border footer2">{elements.length} items left</p>
 		  <div className="position-relative">
-		  <button className="deleteBoton2 position-absolute top-50 start-50 translate-middle mt-5" onClick={deleteAllExceptFirst}>Eliminar todo</button>
+		  <button className="deleteBoton2 position-absolute top-50 start-50 translate-middle mt-5" onClick={deleteAllExceptFirst}>Eliminar todas la tareas</button>
 		  </div>
 	  </>
   );
